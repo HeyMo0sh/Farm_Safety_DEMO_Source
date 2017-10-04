@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>FarmSafety_DEMO_Source</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{239782dd-7cdd-475e-9fc0-0189c2250911}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>FarmSafety_DEMO_Source</RootNamespace>
+    <AssemblyName>FarmSafety_DEMO_Source</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Latin1_General_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+    <DacVersion>1.0.0.1</DacVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="onside\" />
+    <Folder Include="onside\Tables\" />
+    <Folder Include="Security\" />
+    <Folder Include="onside\StoredProcedures" />
+    <Folder Include="PreDeployScripts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="onside\Tables\IncidentReportImage.sql" />
+    <Build Include="onside\Tables\UserDevice.sql" />
+    <Build Include="onside\Tables\RecreationRole.sql" />
+    <Build Include="onside\Tables\OAuthClient.sql" />
+    <Build Include="onside\Tables\RiskReportEvent.sql" />
+    <Build Include="onside\Tables\OAuthRefreshToken.sql" />
+    <Build Include="onside\Tables\PushNotificationTask.sql" />
+    <Build Include="onside\Tables\RiskReportImage.sql" />
+    <Build Include="onside\Tables\SystemAdminRole.sql" />
+    <Build Include="onside\Tables\ModelEntityAudit.sql" />
+    <Build Include="onside\Tables\BusinessImage.sql" />
+    <Build Include="onside\Tables\IncidentAudit.sql" />
+    <Build Include="onside\Tables\RiskAudit.sql" />
+    <Build Include="onside\Tables\IncidentMitigation.sql" />
+    <Build Include="onside\Tables\FtpDownloadProcessingTask.sql" />
+    <Build Include="onside\Tables\UserCardWhitelist.sql" />
+    <Build Include="onside\Tables\FtpUploadProcessingTask.sql" />
+    <Build Include="onside\Tables\FarmExpiryProcessingTask.sql" />
+    <Build Include="onside\Tables\OnSideStatus.sql" />
+    <Build Include="onside\Tables\InitialisationStep.sql" />
+    <Build Include="onside\Tables\EnterFarmEvent.sql" />
+    <Build Include="onside\Tables\SignInEvent.sql" />
+    <Build Include="onside\Tables\FarmEmergencyPlan.sql" />
+    <Build Include="onside\Tables\FarmEmergencyLocation.sql" />
+    <Build Include="onside\Tables\SignOutEvent.sql" />
+    <Build Include="onside\Tables\DiagnosticsLogBatch.sql" />
+    <Build Include="onside\Tables\HeartbeatPulseStatus.sql" />
+    <Build Include="onside\Tables\UserToken.sql" />
+    <Build Include="onside\Tables\EmailProcessingTask.sql" />
+    <Build Include="onside\Tables\LicenceEntityJoin.sql" />
+    <Build Include="onside\Tables\UserRole.sql" />
+    <Build Include="onside\Tables\LicenceEntity.sql" />
+    <Build Include="onside\Tables\BusinessAdminBusiness.sql" />
+    <Build Include="onside\Tables\BillPayer.sql" />
+    <Build Include="onside\Tables\Business.sql" />
+    <Build Include="onside\Tables\UserCard.sql" />
+    <Build Include="onside\Tables\BusinessTeamMemberBusiness.sql" />
+    <Build Include="onside\Tables\Payment.sql" />
+    <Build Include="onside\Tables\ApplicationUser.sql" />
+    <Build Include="onside\Tables\LicenceDetailLine.sql" />
+    <Build Include="onside\Tables\ApplicationUserClaim.sql" />
+    <Build Include="onside\Tables\UserLicence.sql" />
+    <Build Include="onside\Tables\Induction.sql" />
+    <Build Include="onside\Tables\LicenceDetailUserRelationship.sql" />
+    <Build Include="onside\Tables\Farm.sql" />
+    <Build Include="onside\Tables\AlertEvent.sql" />
+    <Build Include="onside\Tables\PromoCode.sql" />
+    <Build Include="onside\Tables\FarmAdminFarm.sql" />
+    <Build Include="onside\Tables\ExitFarmEvent.sql" />
+    <Build Include="onside\Tables\CreateInvoiceTask.sql" />
+    <Build Include="onside\Tables\FarmEvent.sql" />
+    <Build Include="onside\Tables\IncidentImage.sql" />
+    <Build Include="onside\Tables\InvoicePaymentTask.sql" />
+    <Build Include="onside\Tables\InductionEvent.sql" />
+    <Build Include="onside\Tables\PaymentResult.sql" />
+    <Build Include="onside\Tables\ImageEntity.sql" />
+    <Build Include="onside\Tables\RiskImage.sql" />
+    <Build Include="onside\Tables\LicenceInvoice.sql" />
+    <Build Include="onside\Tables\ImageProcessingTask.sql" />
+    <Build Include="onside\Tables\LicenceTemplate.sql" />
+    <Build Include="onside\Tables\BusinessProfile.sql" />
+    <Build Include="onside\Tables\FarmProfile.sql" />
+    <Build Include="onside\Tables\Risk.sql" />
+    <Build Include="onside\Tables\RiskMitigation.sql" />
+    <Build Include="onside\Tables\Incident.sql" />
+    <Build Include="onside\Tables\FarmTeamMemberFarm.sql" />
+    <Build Include="onside\Tables\FarmLocation.sql" />
+    <Build Include="onside\Tables\FarmLocationNeighbour.sql" />
+    <Build Include="onside\Tables\RiskSuggestedMitigation.sql" />
+    <Build Include="onside\Tables\FarmLocationProcessingTask.sql" />
+    <Build Include="onside\Tables\RiskTemplateFarmType.sql" />
+    <Build Include="onside\Tables\ApplicationUserLogin.sql" />
+    <Build Include="onside\Tables\RiskTemplateRiskGroup.sql" />
+    <Build Include="onside\Tables\ApplicationUserRole.sql" />
+    <Build Include="onside\Tables\RiskTemplateItem.sql" />
+    <Build Include="onside\Tables\ApplicationRole.sql" />
+    <Build Include="onside\Tables\RiskTemplateMitigation.sql" />
+    <Build Include="onside\Tables\BusinessAdminRole.sql" />
+    <Build Include="onside\Tables\BusinessTeamMemberRole.sql" />
+    <Build Include="onside\Tables\FarmAdminRole.sql" />
+    <Build Include="onside\Tables\FarmImage.sql" />
+    <Build Include="onside\Tables\FarmTeamMemberRole.sql" />
+    <Build Include="onside\Tables\IncidentReportEvent.sql" />
+    <Build Include="onside\Tables\CasualUseDay.sql" />
+    <Build Include="onside\StoredProcedures\spLetsFindRiskStuff.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FarmSafety_DEMO_Source_BUILD.publish.xml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+</Project>
